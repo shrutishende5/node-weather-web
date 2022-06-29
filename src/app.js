@@ -4,7 +4,7 @@ const hbs = require('hbs')
 const geoLocation = require('../src/utility/geoCode');
 const foreCast = require('../src/utility/foreCast'); 
 const app = express()
-
+const port = process.env.PORT || 3000;
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -71,6 +71,6 @@ app.get('*',(req,res)=>{
         title:'Wheather'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port'+port)
 })
